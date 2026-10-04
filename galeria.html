@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria — O Teu Nome</title>
+  <meta name="description" content="Galeria de fotografias de O Teu Nome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Estilo/style.css">
+</head>
+<body class="pagina-galeria">
+ 
+  <header class="topo">
+    <a class="marca" href="index.html">JQB</a>
+    <nav aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="galeria.html" aria-current="page">Galeria</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <h1 class="titulo-galeria">Galeria</h1>
+ 
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+ 
+    <section class="galeria" id="galeria" aria-live="polite"></section>
+  </main>
+ 
+  <dialog class="lightbox" id="lightbox" aria-label="Fotografia ampliada">
+    <button class="lb-fechar" type="button" aria-label="Fechar">×</button>
+    <button class="lb-seta lb-anterior" type="button" aria-label="Fotografia anterior">‹</button>
+    <figure>
+      <img id="lb-imagem" src="" alt="">
+      <figcaption id="lb-legenda"></figcaption>
+    </figure>
+    <button class="lb-seta lb-seguinte" type="button" aria-label="Fotografia seguinte">›</button>
+  </dialog>
+  
+ <br>
+  <footer>
+    <div class="social-links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    <p>&copy; 2026 João Queirós Fotografia</p>
+</footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O Teu Nome — Fotografia</title>
+  <meta name="description" content="Portefólio de fotografia de O Teu Nome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Estilo/style.css">
+
+</head>
+<body class="pagina-inicio">
+ 
+  <header class="topo">
+    <a class="marca" href="index.html">JQB</a>
+    <nav aria-label="Principal">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="galeria.html">Galeria</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <section class="hero">
+      <h1>João<br>Barros</h1>
+      <p class="hero-texto">
+        Fotografia é uma das minhas paixões.<br>
+        Fotografo paisagens, animais, vegetação,<br>
+        pessoas e arquitetura.
+      </p>
+      <a class="botao" href="galeria.html">Ver galeria</a>
+    </section>
+ 
+    <!-- Três fotografias em destaque: substitui os ficheiros na pasta images/ -->
+    <section class="destaques" aria-label="Fotografias em destaque">
+      <figure class="foto destaque d1" data-titulo="Destaque 1">
+        <img src="images/destaque-1.jpg" alt="Descreve aqui a fotografia 1" loading="eager">
+      </figure>
+      <figure class="foto destaque d2" data-titulo="Destaque 2">
+        <img src="images/destaque-2.jpg" alt="Descreve aqui a fotografia 2" loading="eager">
+      </figure>
+      <figure class="foto destaque d3" data-titulo="Destaque 3">
+        <img src="images/destaque-3.jpg" alt="Descreve aqui a fotografia 3" loading="eager">
+      </figure>
+    </section>
+ 
+    <section class="sobre" id="sobre">
+      <h2>Sobre mim</h2>
+      <p>
+        Escreve aqui duas ou três frases sobre ti: há quanto tempo fotografas,
+        o que te interessa e com que equipamento trabalhas.
+      </p>
+      <p>
+        Contacto: <a href="mailto:o.teu@email.pt">o.teu@email.pt</a>
+      </p>
+    </section>
+  </main>
+ 
+  <footer>
+    <div class="social-links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    <p>&copy; 2026 João Queirós Fotografia</p>
+</footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
