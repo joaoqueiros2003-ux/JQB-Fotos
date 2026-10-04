@@ -1,0 +1,323 @@
+/* ---------- Variáveis ---------- */
+:root {
+    --fundo: #e8ebea;
+    --tinta: #1c2226;
+    --tinta-suave: #55606a;
+    --linha: #c3cac9;
+    --acento: #2c5b66;
+    --acento-escuro: #1d4049;
+    --placeholder-a: #b9c6c4;
+    --placeholder-b: #8fa5a8;
+    --fonte-titulo: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --fonte-texto: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --margem: clamp(1.25rem, 4vw, 3.5rem);
+  }
+   
+  /* ---------- Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+   
+  html { scroll-behavior: smooth; }
+   
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+   
+  img { display: block; max-width: 100%; }
+   
+  a { color: inherit; }
+   
+  :focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 3px;
+  }
+   
+  /* ---------- Cabeçalho e rodapé ---------- */
+  .topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem var(--margem);
+  }
+   
+  .marca {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+  }
+   
+  .topo nav { display: flex; gap: 1.5rem; }
+   
+  .topo nav a {
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+   
+  .topo nav a:hover,
+  .topo nav a[aria-current="page"] { border-bottom-color: var(--acento); }
+   
+  /* ---------- Fotografias (partilhado) ---------- */
+  .foto {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--placeholder-a), var(--placeholder-b));
+  }
+   
+  .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+   
+  /* Quando a imagem não existe, mostra o título sobre o fundo */
+  .foto.sem-imagem img { display: none; }
+   
+  .foto.sem-imagem::after {
+    content: attr(data-titulo);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    color: var(--acento-escuro);
+  }
+   
+  /* ---------- Página de introdução ---------- */
+  .hero {
+    padding: clamp(2rem, 8vw, 6rem) var(--margem) 2.5rem;
+  }
+   
+  .hero h1 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: clamp(4rem, 17vw, 13rem);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+  }
+   
+  .hero-texto {
+    max-width: 34ch;
+    margin: 2rem 0;
+    font-size: 1.25rem;
+    color: var(--tinta-suave);
+  }
+   
+  .botao {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background: var(--acento);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background 0.2s;
+  }
+   
+  .botao:hover { background: var(--acento-escuro); }
+   
+  .destaques {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: clamp(0.5rem, 1.5vw, 1.25rem);
+    align-items: end;
+    padding: 0 var(--margem);
+  }
+   
+  .destaque.d1 { aspect-ratio: 4 / 5; }
+  .destaque.d2 { aspect-ratio: 3 / 4; }
+  .destaque.d3 { aspect-ratio: 1 / 1; }
+   
+  .sobre {
+    max-width: 62ch;
+    padding: 4rem var(--margem) 0;
+  }
+   
+  .sobre h2 {
+    margin: 0 0 1rem;
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+   
+  /* ---------- Página da galeria ---------- */
+  .titulo-galeria {
+    margin: 1rem var(--margem) 1.5rem;
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+   
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 var(--margem) 1.5rem;
+  }
+   
+  .filtros button {
+    padding: 0.45rem 1.1rem;
+    font: inherit;
+    font-size: 0.9375rem;
+    color: var(--tinta);
+    background: transparent;
+    border: 1.5px solid var(--tinta);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+   
+  .filtros button:hover { background: rgba(28, 34, 38, 0.08); }
+   
+  .filtros button[aria-pressed="true"] {
+    background: var(--tinta);
+    color: var(--fundo);
+  }
+   
+  .galeria {
+    columns: 3 260px;
+    column-gap: clamp(0.5rem, 1.5vw, 1.25rem);
+    padding: 0 var(--margem);
+  }
+   
+  .item {
+    break-inside: avoid;
+    margin-bottom: clamp(0.5rem, 1.5vw, 1.25rem);
+  }
+   
+  .item button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  /*Footer*/
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+   
+  /* Reserva espaço até a imagem carregar; depois usa a proporção real */
+  .item .foto { aspect-ratio: var(--proporcao, 3 / 2); }
+  .item .foto.carregada { aspect-ratio: auto; }
+  .item .foto.carregada img { height: auto; }
+   
+  .item .foto img { transition: transform 0.4s; }
+  .item button:hover .foto img { transform: scale(1.03); }
+   
+  /* ---------- Lightbox ---------- */
+  .lightbox {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(14, 18, 20, 0.94);
+    color: #fff;
+  }
+   
+  .lightbox[open] {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 3.5rem 1rem 1rem;
+  }
+   
+  .lightbox figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    min-width: 0;
+  }
+   
+  .lightbox img {
+    max-width: 100%;
+    max-height: calc(100vh - 9rem);
+    object-fit: contain;
+  }
+   
+  .lightbox figcaption { font-size: 0.9375rem; text-align: center; }
+   
+  .lb-fechar,
+  .lb-seta {
+    font: inherit;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+  }
+   
+  .lb-fechar:hover,
+  .lb-seta:hover { background: rgba(255, 255, 255, 0.25); }
+   
+  .lb-fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.75rem;
+  }
+   
+  .lb-seta {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+  }
+   
+  /* ---------- Ecrãs pequenos ---------- */
+  @media (max-width: 640px) {
+    .destaques { grid-template-columns: 1fr 1fr; }
+    .destaque.d1 { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+    .lightbox[open] { grid-template-columns: 1fr; }
+    .lb-seta { position: absolute; bottom: 1rem; }
+    .lb-anterior { left: 1rem; }
+    .lb-seguinte { right: 1rem; }
+  }
+   
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
