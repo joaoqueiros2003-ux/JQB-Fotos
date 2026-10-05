@@ -139,7 +139,7 @@
   .destaque.d3 { aspect-ratio: 1 / 1; }
    
   .sobre {
-    max-width: 62ch;
+    max-width: 80ch;
     padding: 4rem var(--margem) 0;
   }
    
